@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.aplication")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -9,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.keepnote"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -32,6 +33,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    // enable data banding
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
     }
 }
 
