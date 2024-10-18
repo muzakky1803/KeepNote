@@ -10,6 +10,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var inputNote: EditText
@@ -30,6 +32,10 @@ class MainActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             // Ambil teks dari EditText
             val noteText = inputNote.text.toString()
+            val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+            val gridLayoutManager = GridLayoutManager(this, 2) // 2 kolom
+            val gridLayoutManage = null
+            recyclerView.layoutManager = gridLayoutManage
 
             // Cek jika teks tidak kosong
             if (noteText.isNotEmpty()) {
@@ -53,6 +59,7 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
         }
     }
 }
