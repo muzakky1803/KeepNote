@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <!-- Data binding jika diperlukan -->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,14 +13,46 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <!-- Judul Keep Note -->
         <TextView
+            android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Keep Note"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Tempat input untuk catatan -->
+        <EditText
+            android:id="@+id/inputNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan catatan..."
+            android:inputType="textMultiLine"
+            android:minHeight="100dp"
+            android:background="@drawable/rounded_edittext_background"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_default="spread"
+            android:layout_margin="16dp"/>
+
+        <!-- Tombol untuk menyimpan catatan -->
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan Catatan"
+            app:layout_constraintTop_toBottomOf="@id/inputNote"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
